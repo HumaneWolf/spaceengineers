@@ -1,3 +1,19 @@
+/*
+This script is for setting up airlocks.
+
+When two doors are paired up, if one is open, you will be unable to open the other one, thus unable to let the air out.
+In addition, the airlocks will automatically close after a short while.
+
+To use:
+- Place the programmable block in the base or ship of your choice.
+- Rename two doors to "airlock_A_<some name you know>" and "airlock_B_<same name>".
+- Those are now considered the two doors in an airlock.
+
+To show airlock statuses:
+- Add [AIRLOCKS] in front of the name of a LCD panel.
+- You might need to lower the font size from the default size.
+*/
+
 List<DoorPair> doors = new List<DoorPair>();
 
 const string prefix = "airlock_";
