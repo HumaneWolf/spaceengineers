@@ -87,7 +87,7 @@ public class DoorPair {
             status = "CLOSED";
         }
 
-        return status + " : " + door1.CustomName + " - " + door2.CustomName;
+        return status + " : " + door1.CustomName.Substring(prefix.Length + prefixA.Length);
     }
 
     private bool Door1Open() {
