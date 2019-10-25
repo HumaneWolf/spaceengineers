@@ -49,7 +49,7 @@ public Program() {
     GridTerminalSystem.GetBlocksOfType<IMyTextPanel>(tempScreens);
     foreach (IMyTextPanel s in tempScreens) {
         if (s.CustomName.StartsWith(monitorPrefix)) {
-            tempScreens.Add(s);
+            screens.Add(s);
         }
     }
 }
