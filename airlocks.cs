@@ -15,6 +15,7 @@ To show airlock statuses:
 */
 
 List<DoorPair> doors = new List<DoorPair>();
+List<IMyTextPanel> screens = new List<IMyTextPanel>{};
 
 const string prefix = "[airlock";
 const string prefixA = "A]";
@@ -43,6 +44,14 @@ public Program() {
             Echo("Pair added: " + d.CustomName + " and " + tempDoor.CustomName);
         }
     }
+
+    List<IMyTextPanel> tempScreens = new List<IMyTextPanel>{};
+    GridTerminalSystem.GetBlocksOfType<IMyTextPanel>(tempScreens);
+    foreach (IMyTextPanel s in screens) {
+        if (s.CustomName.StartsWith(monitorPrefix)) {
+            tempScreens.Add(s);
+        }
+    }
 }
 
 public void Main() {
@@ -59,13 +68,9 @@ public void Main() {
     monitorContent += "\n[" + doors.Count + " airlocks]\n";
     monitorContent += "[" + Runtime.CurrentInstructionCount + "/" + Runtime.MaxInstructionCount + " instructions]";
 
-    List<IMyTextPanel> screens = new List<IMyTextPanel>{};
-    GridTerminalSystem.GetBlocksOfType<IMyTextPanel>(screens);
     foreach (IMyTextPanel s in screens) {
-        if (s.CustomName.StartsWith(monitorPrefix)) {
-            s.ContentType = ContentType.TEXT_AND_IMAGE;
-            s.WriteText(monitorContent, false);
-        }
+        s.ContentType = ContentType.TEXT_AND_IMAGE;
+        s.WriteText(monitorContent, false);
     }
 }
 
