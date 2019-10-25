@@ -6,7 +6,7 @@ In addition, the airlocks will automatically close after a short while.
 
 To use:
 - Place the programmable block in the base or ship of your choice.
-- Rename two doors to "airlock_A_<some name you know>" and "airlock_B_<same name>".
+- Rename two doors to "[airlockA]<some name you know>" and "[airlockB]<same name>".
 - Those are now considered the two doors in an airlock.
 
 To show airlock statuses:
@@ -16,9 +16,9 @@ To show airlock statuses:
 
 List<DoorPair> doors = new List<DoorPair>();
 
-const string prefix = "airlock_";
-const string prefixA = "A_";
-const string prefixB = "B_";
+const string prefix = "[airlock";
+const string prefixA = "A]";
+const string prefixB = "B]";
 
 const string monitorPrefix = "[AIRLOCKS]";
 
