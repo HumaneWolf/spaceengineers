@@ -63,8 +63,8 @@ public void Main() {
     GridTerminalSystem.GetBlocksOfType<IMyTextPanel>(screens);
     foreach (IMyTextPanel s in screens) {
         if (s.CustomName.StartsWith(monitorPrefix)) {
-            s.ShowPublicTextOnScreen();
-            s.WritePublicText(monitorContent, false);
+            s.ContentType = ContentType.TEXT_AND_IMAGE;
+            s.WriteText(monitorContent, false);
         }
     }
 }
