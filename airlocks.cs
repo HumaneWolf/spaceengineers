@@ -47,7 +47,7 @@ public Program() {
 
     List<IMyTextPanel> tempScreens = new List<IMyTextPanel>{};
     GridTerminalSystem.GetBlocksOfType<IMyTextPanel>(tempScreens);
-    foreach (IMyTextPanel s in screens) {
+    foreach (IMyTextPanel s in tempScreens) {
         if (s.CustomName.StartsWith(monitorPrefix)) {
             tempScreens.Add(s);
         }
