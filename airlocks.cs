@@ -104,7 +104,7 @@ public class DoorPair {
     }
 
     public void RunUpdate() {
-        if (open && DateTime.UtcNow.Subtract(openSince).TotalSeconds > 2) {
+        if (open && DateTime.UtcNow.Subtract(openSince).TotalSeconds > 1) {
             door1.ApplyAction("Open_Off");
             door2.ApplyAction("Open_Off");
             open = false;
